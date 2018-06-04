@@ -12,7 +12,7 @@ endnumber = floor(data(end,1)/duration);
 ofile = filename(1:find(filename == '_',1,'last'));
 
 for i = 0:endnumber
-    ofilename = [ofile num2str(start+i) '.xlsx'];
+    ofilename = [ofile num2str(start+i) '.xls'];
     odata = data((data(:,1)>=i*duration) & (data(:,1)<(i+1)*duration-10),:);
     odata(:,1) = odata(:,1) - i*duration;
     xlswrite(ofilename,odata);
